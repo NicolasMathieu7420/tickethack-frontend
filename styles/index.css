@@ -35,6 +35,7 @@ body {
     grid-column-start: 5;
     grid-column-end: 7;
     text-align: center;
+    overflow-y: auto;     /* barre de défilement uniquement si nécessaire */
 }
 
 .central {
