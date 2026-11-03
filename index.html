@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="./styles/index.css" />
+  
+</head>
+
+
+<body>
+    <div id="header">
+        <div><h4 id="Title">Ticket hack</h4></div>
+        <div><p id="Cart">Panier<p></div>
+        <div><p id="Reservation">Réservation<p></div>
+    </div>
+
+    <div id="container">
+        <div id="header_container">
+            <h2>Explorer le monde sans éffort en train</h2>
+            <h6>Comparer, rechercher votre prochain trajet, votre voyage commence ici</h6>
+            </div>
+        <div id="recherche" class="central">
+            <div id="recherche_border">
+            <input id="departure" class="input-btn" type="text" placeholder="Départ" />
+            <input id="arrival" class="input-btn" type="text" placeholder="Arrivée" />
+            <input id="date" class="input-btn" type="datetime" />
+            <button id="research-btn">Rechercher</button>
+            </div>
+        </div>
+        <div id="remplissage" class="central"></div>
+        <div id="trajet" class="central">
+            <div id="trajet_border">
+            <img id="logo" src="images/train.png" />
+            <div id="train-list">
+                <div class="train-row">Paris > Lyon 16:23 126€<button class="book-train">Réserver</button></div>
+                <div class="train-row">Paris > Lyon 16:45 132€<button class="book-train">Réserver</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>

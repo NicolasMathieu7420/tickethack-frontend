@@ -1,0 +1,150 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+#header {
+    display:flex;
+    border: 1px black solid;
+    padding-left: 10vw;
+    align-items: center;
+}
+
+#Title {
+    width: 70vw;
+    color:rgb(29, 128, 29);
+    font-size: 30px;
+   
+}
+
+#Cart {
+    float: right;
+    width: 10vw;
+    vertical-align: center;
+    font-size: 25px;
+}
+
+#Reservation {
+     float: right;
+     width: 10vw;
+     font-size: 25px;
+}
+
+#container {
+    display: grid;
+    grid-template-rows: repeat(2, 30%);
+    grid-template-columns: repeat(7, 14%);
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+}
+
+#header_container {
+    /*border: 0.5px black solid;*/
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 8;
+    text-align: center;
+   
+}
+
+#recherche {
+    /*border: 0.5px black solid;*/
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+#remplissage {
+    /*border: 0.5px black solid;*/
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+
+#trajet {
+    /*border: 0.5px black solid;*/
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 5;
+    grid-column-end: 7;
+    text-align: center;
+}
+
+.central {
+    height: 30vw;
+}
+
+h2 {
+    font-size: 55px;
+}
+
+h6 {
+    font-size: 35px;
+}
+
+.book-train {
+    margin-left: 20px;
+}
+
+#recherche_border {
+    display:flex;
+    flex-direction: column;
+    height: 20vw;
+    width: 30wv;
+    /*border: solid;*/
+    background-color: white;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+#trajet_border {
+    height: 20vw;
+    width: 30wv;
+    /*border: solid;*/
+    background-color: white;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+#research-btn {
+    margin-top: 85px;
+    height: 40px;
+    background-color:rgb(29, 128, 29);
+    color: white;
+    font-size: 20px;
+}
+
+#departure  {
+    margin-top: 25px;
+}
+
+#arrival {
+    margin-top: 25px;
+}
+
+#date {
+    margin-top: 25px;
+}
+
+.input-btn{
+    height: 40px;
+    background-color: lightgray;
+    border-radius: 4px;
+}
+
+.train-row {
+    margin-bottom: 20px;
+    background-color: rgb(240, 192, 200);
+    border-radius: 4px;
+    height: 30px;
+}
+
+.book-train {
+    background-color:rgb(29, 128, 29);
+    color: white;
+    font-size: 15px;
+    margin-left: 150px;
+}
