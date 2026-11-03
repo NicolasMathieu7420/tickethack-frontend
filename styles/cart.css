@@ -1,0 +1,80 @@
+body {
+    margin:0;
+    padding:0;
+}
+
+#container {
+    height: 40vw;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+    background-color: lightgrey;
+}
+
+#cart-border {
+     height: 30vw;
+     width: 70vw;
+     background-color: white;
+     position: relative;
+}
+
+#myCart {
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+    height: 4vw;
+    font-size: 25px;
+}
+
+.cart-row {
+    margin-bottom: 20px;
+    background-color: rgb(240, 192, 200);
+    border-radius: 4px;
+    height: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;     /* vertical */
+}
+
+.row {
+    margin-left: 300px;
+}
+
+.book-train {
+    height: 100px;
+    width: 50px;
+}
+
+#total {
+    width: 70vw;
+    height: 60px;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;
+    float: left;
+    font-size: 30px;
+    background-color: lightblue;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#purchase {
+    margin-left: 400px;
+    font-size: 20px;
+    background-color:rgb(29, 128, 29);
+    color: white;
+    border-radius: 4px;
+    width: 150px;
+}
+
+.delete {
+    margin-left: 22vw;
+    background-color:rgb(29, 128, 29);
+    color: white;
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+}

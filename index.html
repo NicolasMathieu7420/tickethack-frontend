@@ -3,31 +3,30 @@
 
 <head>
   <link rel="stylesheet" href="./styles/index.css" />
-  
+  <link rel="stylesheet" href="./styles/header.css" />
 </head>
 
 
 <body>
     <div id="header">
-        <div><h4 id="Title">Ticket hack</h4></div>
-        <div><p id="Cart">Panier<p></div>
-        <div><p id="Reservation">Réservation<p></div>
+        <div><a href='./index.html' id="nolink"><h4 id="Title">Ticket hack</h4></a></div>
+        <div><a href='./cart.html' id="Cart">Panier</a></div>
+        <div><a href='./booking.html' id="Reservation">Réservation</a></div>
     </div>
 
     <div id="container">
         <div id="header_container">
-            <h2>Explorer le monde sans éffort en train</h2>
+            <h1>Explorer le monde sans éffort en train</h1>
             <h6>Comparer, rechercher votre prochain trajet, votre voyage commence ici</h6>
             </div>
         <div id="recherche" class="central">
             <div id="recherche_border">
             <input id="departure" class="input-btn" type="text" placeholder="Départ" />
             <input id="arrival" class="input-btn" type="text" placeholder="Arrivée" />
-            <input id="date" class="input-btn" type="datetime" />
+            <input id="date" class="input-btn" type="date" />
             <button id="research-btn">Rechercher</button>
             </div>
         </div>
-        <div id="remplissage" class="central"></div>
         <div id="trajet" class="central">
             <div id="trajet_border">
             <img id="logo" src="images/train.png" />

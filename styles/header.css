@@ -1,0 +1,33 @@
+
+#header {
+    display:flex;
+    border: 1px black solid;
+    padding-left: 10vw;
+    align-items: center;
+}
+
+#Title {
+    width: 70vw;
+    color:rgb(29, 128, 29);
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#nolink {
+    text-decoration: none;
+}
+
+#Cart {
+    float: right;
+    width: 10vw;
+    vertical-align: center;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+#Reservation {
+     float: right;
+     width: 10vw;
+     font-size: 25px;
+     text-decoration: none;
+}
