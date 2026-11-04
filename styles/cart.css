@@ -37,6 +37,7 @@ body {
     padding-left: 20px;
     display: flex;
     align-items: center;     /* vertical */
+    column-gap: 12px;
 }
 
 .row {
