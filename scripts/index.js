@@ -19,19 +19,24 @@ document.querySelector('#research-btn').addEventListener('click', function () {
     //console.log(queryString)
 	fetch(queryString).then(response => response.json())
 		.then(data => {
-            let finalData = data.tripExisting.sort((a, b) => new Date(a.date) - new Date(b.date));
-            console.log(finalData.length)
             if(data.result) {
-                for(let i =0; i<finalData.length;i++){
+                let finalData = data.tripExisting.sort((a, b) => new Date(a.date) - new Date(b.date));
+                console.log(finalData.length)
+                if(data.result) {
+                    for(let i =0; i<finalData.length;i++){
 
-                const date = new Date(finalData[i].date);
-                const heures = formatHourAndMinutes(date.getHours())
-                const minutes = formatHourAndMinutes(date.getMinutes());
-                
-                //let innerToPush ='<div class="train-row">Paris > Lyon 16:23 126€<button class="book-train">Réserver</button></div>'
-                let innerToPush = `<div class="train-row">${finalData[i].departure} > ${finalData[i].arrival} ${heures}:${minutes} ${finalData[i].price}€<button class="book-btn">Réserver</button></div>`
-                document.querySelector('#train-list').innerHTML += innerToPush
+                    const date = new Date(finalData[i].date);
+                    const heures = formatHourAndMinutes(date.getHours())
+                    const minutes = formatHourAndMinutes(date.getMinutes());
+                    
+                    //let innerToPush ='<div class="train-row">Paris > Lyon 16:23 126€<button class="book-train">Réserver</button></div>'
+                    let innerToPush = `<div class="train-row"><span>${finalData[i].departure}</span> <span>&gt;</span> <span>${finalData[i].arrival}</span> <span>${heures}:${minutes}</span> <span>${finalData[i].price}€</span><button class="book-btn">Réserver</button></div>`
+                    document.querySelector('#train-list').innerHTML += innerToPush
+                    }
                 }
+            }
+            else{
+                
             }
 		});
 });
