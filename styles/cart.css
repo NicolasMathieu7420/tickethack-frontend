@@ -16,6 +16,7 @@ body {
      width: 70vw;
      background-color: white;
      position: relative;
+     overflow: scroll;
 }
 
 #myCart {

@@ -14,8 +14,7 @@ function updateTotal() {
 //function pour supprimer un bouton
 
 function deleteTrip(event) {
-  event.target.closest(".cart-row").remove();
-  updateTotal();
+  //event.target.closest(".cart-row").remove();
 }
 
 //suppresion d'un voyage au click
@@ -50,12 +49,12 @@ fetch("http://localhost:3000/carts")
   .then((response) => response.json())
   .then((data) => {
     if (data.result) {
-      for (let i = 0; i < data.trip.length; i++) {
-        console.log(data.trip[i]);
+      for (let i = 0; i < data.cart.length; i++) {
+        //console.log(i);
 
         // let innerPush = <div class="cart-row"><span>Paris > Lyon</span><span class="row">16:23</span><span class="price">126€</span><button class="delete row">X</button></div>
-        let innerPush = `<div class="cart-row"><span>${data.trip[i].departure} > ${data.trip[i].arrival}</span><span class="row">${data.trip[i].date}</span><span class="price">${data.trip[i].price}€</span><button class="delete row">X</button></div>`;
-        document.querySelector("#cart-list").innerHTML += innerToPush;
+        let innerPush = `<div class="cart-row"><span>${data.cart[i].departure} > ${data.cart[i].arrival}</span><span class="row">${data.cart[i].date}</span><span class="price">${data.cart[i].price}€</span><button class="delete row">X</button></div>`;
+        document.querySelector("#cart-list").innerHTML += innerPush;
         updateTotal();
         deleteTrip()
       }
