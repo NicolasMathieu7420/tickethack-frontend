@@ -28,7 +28,7 @@ updateTotal();
 
 // Passer la commande au click commander et envoyer au booking
 document.querySelector("#purchase").addEventListener("click", () => {
-  fetch("http://localhost:3000/booking", {
+  fetch("https://tickethack-backend.vercel.app/booking", {
     method: "POST",
   })
     //headers: {'Content-Type': 'application/json'}})
@@ -47,7 +47,7 @@ document.querySelector("#purchase").addEventListener("click", () => {
 
 // Remettre à jour le pannier
 
-fetch("http://localhost:3000/carts")
+fetch("https://tickethack-backend.vercel.app/carts")
   .then((response) => response.json())
   .then((data) => {
     if (data.result) {
@@ -78,7 +78,7 @@ fetch("http://localhost:3000/carts")
         for (let i = 0; i < deleteData.length; i++) {
           deleteData[i].addEventListener("click", function () {
             this.parentElement.remove();
-                    fetch(`http://localhost:3000/carts/${data.cart[i]._id}`, {
+                    fetch(`https://tickethack-backend.vercel.app/carts/${data.cart[i]._id}`, {
                   method: "DELETE",
                     })
                 .then((response) => response.json())

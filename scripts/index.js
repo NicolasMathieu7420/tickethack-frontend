@@ -40,7 +40,7 @@ function createBookButtonEvents(){
       let price = temp.slice(0,index-1)
       //console.log(price)
 
-      fetch('http://localhost:3000/carts', {
+      fetch('https://tickethack-backend.vercel.app/carts', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify({departure,arrival,date,price}),
@@ -68,7 +68,7 @@ document.querySelector('#research-btn').addEventListener('click', function () {
     document.querySelector('#train-list').innerHTML = ''
     //console.log(params.date)
 
-    let queryString = `http://localhost:3000/trips?departure=${params.departure}&arrival=${params.arrival}&date=${params.date}`
+    let queryString = `https://tickethack-backend.vercel.app/trips?departure=${params.departure}&arrival=${params.arrival}&date=${params.date}`
     //console.log(queryString)
 	fetch(queryString).then(response => response.json())
 		.then(data => {
