@@ -11,20 +11,6 @@ function updateTotal() {
   document.querySelector("#total-amount").textContent = total;
 }
 
-//function pour supprimer un bouton
-
-function deleteTrip(event) {
-  event.target.closest(".cart-row").remove();
-  updateTotal();
-}
-
-//suppresion d'un voyage au click
-const deleteButtons = document.querySelectorAll(".delete");
-
-for (let i = 0; i < deleteButtons.length; i++) {
-  deleteButtons[i].addEventListener("click", deleteTrip);
-}
-
 updateTotal();
 
 // Passer la commande au click commander et envoyer au booking
@@ -33,9 +19,10 @@ document.querySelector("#purchase").addEventListener("click", () => {
     method: "POST",
   })
     //headers: {'Content-Type': 'application/json'}})
-    .then((response) => response.json)
+    .then((response) => response.json())
     .then((data) => {
       if (data.result) {
+        document.querySelector("#cart-list").innerHTML = "";
         window.location.href = "booking.html";
       } else {
         console.log("Erreur lors de la validation de la commande");
@@ -44,20 +31,32 @@ document.querySelector("#purchase").addEventListener("click", () => {
   updateTotal();
 });
 
-// Remettre à jour le pannier
+// Charger et afficher le panier 
 
 fetch("http://localhost:3000/carts")
   .then((response) => response.json())
   .then((data) => {
     if (data.result) {
-      for (let i = 0; i < data.trip.length; i++) {
-        console.log(data.trip[i]);
+      let innerPush = "";
 
-        // let innerPush = <div class="cart-row"><span>Paris > Lyon</span><span class="row">16:23</span><span class="price">126€</span><button class="delete row">X</button></div>
-        let innerPush = `<div class="cart-row"><span>${data.trip[i].departure} > ${data.trip[i].arrival}</span><span class="row">${data.trip[i].date}</span><span class="price">${data.trip[i].price}€</span><button class="delete row">X</button></div>`;
-        document.querySelector("#cart-list").innerHTML += innerToPush;
-        updateTotal();
-        deleteTrip()
+      //on accumule tous les trajets 
+      for (let i = 0; i < data.trip.length; i++) {
+
+        innerPush += `<div class="cart-row"><span>${data.trip[i].departure} > ${data.trip[i].arrival}</span><span class="row">${data.trip[i].date}</span><span class="price">${data.trip[i].price}€</span><button class="delete row">X</button></div>`;
       }
-    }
-  });
+        document.querySelector("#cart-list").innerHTML = innerPush;
+
+        const deleteData = document.querySelectorAll(".delete");
+
+        for (let i = 0; i < deleteData.length; i++) {
+          deleteData[i].addEventListener("click", function () {
+            this.parentElement.remove();
+            updateTotal();
+          });
+        }
+         updateTotal()
+      } else {
+        console.log("Votre panier est vide")
+        window.location.href = "index.html";
+      }
+    });
