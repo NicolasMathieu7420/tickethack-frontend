@@ -52,7 +52,7 @@ fetch("http://localhost:3000/carts")
   .then((data) => {
     if (data.result) {
       for (let i = 0; i < data.cart.length; i++) {
-        //console.log(i);
+        //console.log(data.cart);
         let temp = data.cart[i].date
         let index = temp.indexOf(':');
         let hour = Number(temp.slice(0,index))
@@ -72,8 +72,25 @@ fetch("http://localhost:3000/carts")
         // let innerPush = <div class="cart-row"><span>Paris > Lyon</span><span class="row">16:23</span><span class="price">126€</span><button class="delete row">X</button></div>
         let innerPush = `<div class="cart-row"><span>${data.cart[i].departure} > ${data.cart[i].arrival}</span><span class="row">${hourString}:${minuteString}</span><span class="price">${data.cart[i].price}€</span><button class="delete row">X</button></div>`;
         document.querySelector("#cart-list").innerHTML += innerPush;
+
+        const deleteData = document.querySelectorAll(".delete");
+
+        for (let i = 0; i < deleteData.length; i++) {
+          deleteData[i].addEventListener("click", function () {
+            this.parentElement.remove();
+                    fetch(`http://localhost:3000/carts/${data.cart[i]._id}`, {
+                  method: "DELETE",
+                    })
+                .then((response) => response.json())
+                .then((data) => {
+                  if (data.result) {
+
+                }})
+            updateTotal();
+          });
+        }
+
         updateTotal();
-        deleteTrip()
       }
     }
     else
