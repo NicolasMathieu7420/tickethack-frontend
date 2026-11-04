@@ -73,6 +73,7 @@ document.querySelector('#research-btn').addEventListener('click', function () {
 	fetch(queryString).then(response => response.json())
 		.then(data => {
             if(data.result) {
+                document.querySelector('#logo').src = 'images/train.png'
                 let finalData = data.tripExisting.sort((a, b) => new Date(a.date) - new Date(b.date));
                 //console.log(finalData.length)
                 if(data.result) {
@@ -92,7 +93,8 @@ document.querySelector('#research-btn').addEventListener('click', function () {
                 }
             }
             else{
-                document.querySelector('#train-list').innerHTML = ``
+                document.querySelector('#train-list').innerHTML = `<div id="noTrip">Aucun trajet trouvé</div>`
+                document.querySelector('#logo').src = 'images/notfound.png'
             }
 		});
 });

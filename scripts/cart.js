@@ -42,7 +42,7 @@ document.querySelector("#purchase").addEventListener("click", () => {
     });
   updateTotal();
   document.querySelector("#total-amount").textContent = 0
-  document.querySelector("#cart-list").innerHTML = ''
+  document.querySelector("#cart-list").innerHTML = `<div id="noTrip">Aucun trajet dans le panier</div>`
 });
 
 // Remettre à jour le pannier
@@ -57,21 +57,27 @@ fetch("http://localhost:3000/carts")
         let index = temp.indexOf(':');
         let hour = Number(temp.slice(0,index))
         let minute = 0
-        let hourString = hour
-        let minuteString = minute
+        let hourString = hour        
         if(hour < 10){
           hourString = '0'+hour
         }
+        //console.log(temp.slice(index+1, temp.length))
         minute = Number(temp.slice(index+1, temp.length))
+        let minuteString = minute
+        //console.log(minute)
          if(minute < 10){
           minuteString = '0'+minute
         }
-        console.log(hourString, minuteString)
+        //console.log(hourString, minuteString)
         // let innerPush = <div class="cart-row"><span>Paris > Lyon</span><span class="row">16:23</span><span class="price">126€</span><button class="delete row">X</button></div>
         let innerPush = `<div class="cart-row"><span>${data.cart[i].departure} > ${data.cart[i].arrival}</span><span class="row">${hourString}:${minuteString}</span><span class="price">${data.cart[i].price}€</span><button class="delete row">X</button></div>`;
         document.querySelector("#cart-list").innerHTML += innerPush;
         updateTotal();
         deleteTrip()
       }
+    }
+    else
+    {
+      document.querySelector("#cart-list").innerHTML = `<div id="noTrip">Aucun trajet dans le panier</div>`
     }
   });
