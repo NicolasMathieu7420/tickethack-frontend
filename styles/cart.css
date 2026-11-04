@@ -6,9 +6,11 @@ body {
 #container {
     height: 40vw;
     display: flex;
+    flex-direction: column;
     justify-content: center; /* horizontal */
     align-items: center;     /* vertical */
     background-color: lightgrey;
+    overflow:unset;
 }
 
 #cart-border {
@@ -56,15 +58,13 @@ body {
 #total {
     width: 70vw;
     height: 60px;
-    display: flex;
-    justify-content: center; /* horizontal */
-    align-items: center;
-    float: left;
     font-size: 30px;
     background-color: lightblue;
-    position: absolute;
     bottom: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #purchase {
