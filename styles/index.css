@@ -35,7 +35,7 @@ body {
     grid-column-start: 5;
     grid-column-end: 7;
     text-align: center;
-    overflow-y: auto;     /* barre de défilement uniquement si nécessaire */
+    height: 100%;
 }
 
 .central {
@@ -72,6 +72,7 @@ h6 {
     background-color: white;
     border-radius: 4px;
     padding: 15px;
+    overflow: scroll;
 }
 
 #research-btn {
@@ -112,11 +113,11 @@ h6 {
     font-size: 20px;
 }
 
-.book-train {
+.book-btn {
     background-color:rgb(29, 128, 29);
     color: white;
     font-size: 15px;
-    margin-left: 150px;
+    margin-left: 100px;
     font-size: 20px;
     border-radius: 4px;
 }
